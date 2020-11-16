@@ -1,0 +1,71 @@
+{
+    "paths": [
+        {
+            "name": "/book",
+            "lambdaFunction": "mypjlambda",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/book"
+        },
+        {
+            "name": "/search",
+            "lambdaFunction": "mypjsearch",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/GET"
+                ]
+            },
+            "policyResourceName": "/search"
+        }
+    ],
+    "resourceName": "mypjapi",
+    "apiName": "mypjapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "mypjlambda"
+        },
+        {
+            "lambdaFunction": "mypjsearch"
+        }
+    ],
+    "privacy": {
+        "auth": 2,
+        "unauth": 1,
+        "authRoleName": "amplify-mypj-dev-215950-authRole",
+        "unAuthRoleName": "amplify-mypj-dev-215950-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "mypjlambda",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "mypjsearch",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

@@ -10,6 +10,11 @@
       "StackName": "amplify-mypj-dev-215950",
       "StackId": "arn:aws:cloudformation:ap-northeast-1:922906750263:stack/amplify-mypj-dev-215950/9e970220-280b-11eb-9955-0a648eff952a",
       "AmplifyAppId": "dhpjl7ggmnsk3"
+    },
+    "categories": {
+      "auth": {
+        "mypjb0bac025": {}
+      }
     }
   }
 }
